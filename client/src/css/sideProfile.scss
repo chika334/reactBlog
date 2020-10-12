@@ -1,0 +1,59 @@
+/* display content side by side on New.js page */
+.news {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.profileImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // padding-left: 20%;
+}
+
+/* gives content in New.js page spacing */
+.news > div {
+  margin: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* display content side by side on news.js page */
+.new {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+/* display content side by side on new.js page */
+.new > div {
+  margin: 20px;
+  padding: 10px;
+  width: 45%;
+}
+
+@media (min-width: 600px) {
+  .new {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .new > div {
+    padding: 10px;
+    width: 45%;
+  }
+} 
+
+@media (max-width: 599px) {
+  .new {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .new > div {
+    padding: 10px;
+    width: 100%;
+  }
+} 
