@@ -1,0 +1,25 @@
+.categorynew {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  margin-top: 10%;
+
+  label {
+    color: #000;
+    display: flex;
+  }
+
+  .categoryinput {
+    width: 100%;
+    padding: 4px;
+    border-radius: 5px;
+    margin-bottom: 3%;
+  }
+}
+
+.categorynew > div {
+  margin: 20px;
+  padding: 10px;
+  width: 45%;
+}

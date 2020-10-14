@@ -9,6 +9,8 @@ require('dotenv').config()
 // routes
 const users = require('./routes/user')
 const update = require('./routes/update')
+const categories = require("./routes/categories")
+const tag = require("./routes/tag")
 
 // middleware
 app.use(cors({origin: true, credentials: true}));
@@ -26,6 +28,8 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopolo
 app.use(express.json());
 app.use('/api', users)
 app.use('/api', update)
+app.use('/api', categories)
+app.use('/api', tag)
 
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client

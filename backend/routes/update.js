@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
-const {Image} = require('../models/Image')
 const auth = require('../middleware/auth')
 const multer = require('multer')
 
@@ -25,47 +24,6 @@ router.post('/update', (req, res) => {
   //   })
   // })
 })
-
-// post file uploads during chats
-// router.put("/updateImage", (req, res) => {
-//   console.log(req)
-//   Image.find({}, (err, results) => {
-//     if (err) throw err
-//     var image = []
-//     for (var result of results) {
-//       image.push(result.path)
-//     }
-//     res.render('profile', {
-//       image: image
-//     })
-//     console.log(results)
-//   })
-// });
-
-// router.post('/updateImage', (req, res) => {
-//   var fstream
-//   req.pipe(req.busboy)
-//   req.busboy.on('file', function (fieldname, file, filename, done) {
-//     console.log('Uploading' + filename)
-//     // path where the file is being uploaded
-//     fstream = fs.createWriteStream(__dirname + '/public/uploads/' + filename)
-//     var dirname = path.join( 'uploads/' + filename)
-//     file.pipe(fstream)
-//     fstream.on('close', function () {
-//       console.log('Upload Success' + filename)
-
-//       let name = new Name({
-//         path: dirname
-//       })
-//       name.save((err) => {
-//         if (err) throw err
-//         console.log(`saved : ${name}`)
-//         res.redirect('/profile')
-//       // removed call(), no need for it
-//       })
-//     })
-//   })
-// })
 
 let Storage = multer.diskStorage({
   destination: function (req, file, cb) {

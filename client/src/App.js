@@ -25,6 +25,7 @@ import Updateuser from './components/profile/Updateuser';
 import Blog from './pages/Blogs'
 import CreateBlog from './components/Blog/section/CreateBlog';
 import BlogPage from './components/Blog/BlogPage';
+import Createcategories from './components/Blog/categoryandtag/Categoryindex'
 
 class App extends Component {
   componentDidMount() {
@@ -46,7 +47,8 @@ class App extends Component {
           <Route exact path={"/blog/post/:postId"} component={Blog} />
           <PrivateRoute exact path={"/profile"} component={Profile} />
           <PrivateRoute exact path={"/profile/updateuser"} component={Updateuser} />
-          <PrivateRoute exact path={"/profile/createblog"} component={CreateBlog} />;
+          <PrivateRoute exact path={"/profile/createblog"} component={CreateBlog} />
+          <PrivateRoute exact path={"/profile/createcategories"} component={Createcategories} />
           {/* <Route exact path={`/auth/password/reset/${token}`} component={Reset} /> */}
         </Switch>
       </Suspense>

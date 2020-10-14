@@ -26,7 +26,9 @@ export class profilepics extends Component {
             <ListGroup.Item>
               <Link to="/profile/updateuser">Update Profile</Link>
             </ListGroup.Item>
-            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+            <ListGroup.Item>
+              <Link to="/profile/createcategories">Create categories</Link>
+            </ListGroup.Item>
             <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
           </ListGroup>
 

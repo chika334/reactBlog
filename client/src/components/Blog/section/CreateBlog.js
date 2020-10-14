@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-// import Title from 'antd/lib/skeleton/Title'
-// import { Button } from 'react-bootstrap'
 import {Typography, Form, Button} from 'antd'
+import QuillEditor from './QuillEditor'
+import '../../../css/createBlog.scss'
 const { Title } = Typography
 
 export class CreateBlog extends Component {
   state ={
-    content: ''
+    content: '',
+    file: []
+  }
+
+  onEditorChange = (value) => {
+    // setContent(value)
+    this.setState({content: value})
+    // console.log(this.state.content)
+  }
+
+  onFilesChange = (files) => {
+    this.setState({file: files})
+    // setFiles(files)
   }
 
   onSubmit = e => {
@@ -15,25 +27,32 @@ export class CreateBlog extends Component {
 
     this.setState({content: ''})
   }
+
   render() {
     return (
       <div>
-        <div style={{ maxWidth: '700px', margin: '2rem auto'}}>
+        <div className="blogWriter" style={{ maxWidth: '500px'}}>
           <div style={{ textAlign: 'center' }}>
-            <Title level={2}>Editor</Title>
+            <Title level={2}>Create Blog</Title>
           </div>
-          {/* <QuillEditor
+
+          <div>
+            {/* <Title level={4}>Blog Title</Title> */}
+            <input className="blog-title" type="text" placeholder="Enter Blog Title" />
+          </div>
+
+          <QuillEditor
             placeholder={"Start Posting Something"}
-            onEditorChange={onEditorChange}
-            onFilesChange={onFilesChange}
-          /> */}
+            onEditorChange={this.onEditorChange}
+            onFilesChange={this.onFilesChange}
+          />
 
           <Form onSubmit={this.onSubmit}>
             <div style={{ textAlign: 'center', margin: '2rem'}}>
               <Button
                 size="large"
                 htmlType="submit"
-                className=""
+                className="btn btn-primary"
                 onSubmit={this.onSubmit}
               >
                 Submit
